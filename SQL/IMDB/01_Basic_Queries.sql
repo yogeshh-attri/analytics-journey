@@ -64,3 +64,21 @@ GROUP BY year ORDER BY year;
 SELECT MONTH(date_published) AS month_num,
 COUNT(*) AS number_of_movies FROM movie
 GROUP BY MONTH(date_published) ORDER BY month_num;
+
+
+-- =====================================================
+-- Q4. How many movies were produced in the USA or India in the year 2019?
+-- =====================================================
+
+SELECT COUNT(*) AS number_of_movies
+FROM movie
+WHERE year = 2019
+AND (country LIKE '%USA%' OR country LIKE '%India%');
+
+
+
+-- =====================================================
+-- Q5. Find the unique list of genres present in the dataset.
+-- =====================================================
+
+SELECT DISTINCT genre FROM genre ORDER BY genre;
